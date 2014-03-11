@@ -1,25 +1,30 @@
 {
-	"name": "Scrum for Trello",
-	"version": "1.86",
-	"description": "Adds Scrum to your Trello",
-	"content_scripts": [
-		{
-			"matches": ["https://trello.com/*"],
-			"js": ["jquery-1.7.1.min.js","trelloscrum.js"],
-			"css": ["trelloscrum.css"]
-		}
-	],
-	"manifest_version" : 2,
-    "icons": { "128": "trello-scrum-icon.png" },
-    "web_accessible_resources": [
-	    "images/storypoints-icon.png",
-	    "images/points-done.png",
-		"images/burndown_for_trello_icon_12x12.png",
-		"images/burndown_for_trello_icon_18x18.png",
-		"images/trello-scrum-icon_12x12.png",
-		"images/trello-scrum-icon_18x18.png"
+    "name": "OGD's enhancements for Trello",
+    "version": "6",
+    "description": "",
+    "content_scripts": [
+        {
+            "matches": ["https://trello.com/*"],
+            "js": ["jquery-1.7.1.min.js","mutation_summary.js","trelloscrum.js"],
+            "css": ["trelloscrum.css"]
+        }
     ],
-	"permissions": [
-		"storage"
-	]
+    "background": {
+        "scripts": [
+            "showPageAction.js"
+        ]
+    },
+    "permissions": [
+        "tabs"
+    ],
+    "page_action": {
+        "default_icon": {
+          "19": "images/ogd-trello19.png",
+          "38": "images/ogd-trello38.png"
+        },
+        "default_title": "Board settings",
+        "default_popup": "popup.html"
+    },
+    "manifest_version" : 2,
+    "icons": { "128": "images/ogd-trello128.png" }
 }

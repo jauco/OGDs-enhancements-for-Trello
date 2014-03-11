@@ -1,82 +1,176 @@
-.list-total {
-	color: #006580;
-	font-size: 16px;
-	font-weight: bold;
-	float: right;
-	margin: 1px 0px 0 0;
-	line-height:18px;
+/*trello css design leftovers that aren't visible when using vanilla trello, but get in the way when you change css rules*/
+.list-gradient-top,
+.list-gradient-bottom {
+	background: transparent !important;
 }
-.board-header-btns .list-total{ /* only targets the board totals */
-	line-height:30px;
-	color: #60c5f0;
+.list .list-card .card-operation {
+	background-color: transparent;
 }
 
-.list-total .cpoints{
-	margin-right:3px;
-	opacity: 0.5;
+/*be able to hide random elements*/
+.trelloScrum-hide {
+	display: none !important;
 }
 
-.list .list-title h2 {
-	float: none !important;
-	display: inline !important;
-	margin-right: 0 !important;
-	vertical-align: -4px;
+/* FEATURE: Make inactive lists darker */
+.list.trelloScrum-inactive {
+	background-color: #bbb;
+ 	border-top-color: #DDD;
 }
 
-.manual .window-main-col p, .window-main-col h2 {
-	display: block !important;
+.list-link.trelloScrum-inactive strong{
+	color: #BBB;
 }
 
-.badge-points {
-	background-color: #006580 !important;
-	border-color: #005b72 !important;
-	border-bottom-color: #004b5f !important;
-	color: #e1fafb !important;
-	float: right;
-	font-size: 11px;
-	line-height: 16px;
-	text-align: right;
-	background-repeat: no-repeat !important;
-	background-position: 3px 3px !important;
-	padding: 0 4px 0 17px !important;
+
+.list.trelloScrum-inactive .open-card-composer:hover {
+	background-color: #999;
 }
 
-.picker {
-	float: right;
-	padding-top: 5px;
+.list.trelloScrum-inactive h2 {
+	font-weight: normal;
 }
 
-.points-done-icon{
-	background-position: 0px 3px !important;
-	background-repeat: no-repeat !important;
-	margin-left:3px;
-}
-.js-points-done:hover > .points-done-icon{
-	background-position: -11px 3px !important;
-}
+/* FEATURE: show points */
 
-.point-value {
-	background-color: #006580 !important;
-	border-radius: 3px;
-	padding: 2px 5px !important;
-	margin-right: 5px;
-	font-size: 15px !important;
-	color: white;
-	font-weight:bold;
-	cursor: pointer;
-}
-
-.badge-points:empty {
+/* total */
+.list-header:hover .trelloScrum-pointsTotal,
+.list-header:hover .trelloScrum-ghostTotal {
 	display: none;
 }
 
-.badge-points.consumed{
-	opacity: 0.5;
+.list-title {
+    width: 120px;
 }
 
-/* == b4t integration==*/
-#burndownLink .icon-sm{
-    padding:6px;
-    margin-top:1px;
+.list .trelloScrum-ghostTotal {
+    display: none;
 }
-/* == end b4t integration == */
+.trelloScrum-ghostCards-enabled  .trelloScrum-ghostTotal {
+    display: inherit;
+}
+
+.list .trelloScrum-pointsTotal,
+.list .trelloScrum-ghostTotal {
+	font-size: 75%;
+	position: absolute;
+	right: 6px;
+	top: -7px;
+	padding: 2px 5px 3px;
+	background-color: #2478A8;
+	color: white;
+	font-weight: bold;
+	z-index: 3;
+	-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0) 100%);
+}
+.list .trelloScrum-ghostTotal {
+    right: 40px;
+    opacity: .5;
+}
+
+.list .trelloScrum-ghostTotal:empty,
+.list .trelloScrum-pointsTotal:empty {
+	display: none;
+}
+
+/*points per card */
+.list-card .trelloScrum-points {
+	position: absolute;
+	color: #939393;
+	font-weight: bold;
+	right: -1px;
+	top: -1px;
+	float: right;
+	font-size: 11px;
+	line-height: 16px;
+	padding: 0 4px;
+	border-radius: 3px;
+	background: #e6e6e6;
+	border: 1px solid #d9d9d9;
+	border-bottom-color: #d3d3d3;
+}
+
+.list-card .trelloScrum-points.trelloScrum-questionMark {
+	color: rgb(238, 238, 238);
+	background-color: #cb4d4d;
+	border-color: rgb(114, 40, 40);
+}
+
+.list-card .trelloScrum-points.trelloScrum-big {
+    color: rgb(238, 238, 238);
+    background-color: #9933cc;
+    border-color: rgb(114, 40, 40);
+}
+
+/* make cards without points ghostey*/
+.trelloScrum-ghostCards-enabled .list-card.trelloScrum-ghostcard {
+	opacity: .5;
+}
+
+
+/* FEATURE: make .trelloScrum-seperator cards look like a separator*/
+.list {
+	padding-left: 0 !important;
+}
+
+.open-card-composer {
+	margin: 2px -2px -2px 0px !important;
+}
+
+.list-cards {
+	padding-left: 8px !important;
+}
+
+.list-card-area {
+	margin-left: -2px;
+}
+
+.trelloScrum-labelCards-enabled .archive-items .list-card.trelloScrum-seperator,
+.trelloScrum-labelCards-enabled .list .list-card.trelloScrum-seperator.ui-droppable {
+	border: none;
+	z-index: auto;
+	opacity: 1;
+	margin-left: -3px;
+	margin-right: 17px;
+	padding-left: 10%;
+	background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, rgba(255, 255, 160, 0.3) 1%, rgba(0, 0, 0, 0.2) 6%, transparent 22%, transparent 96%, rgba(255, 255, 255, 0.1) 99%, rgba(0, 0, 0, 0.1) 100%);
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 5px, rgba(0, 0, 0, 0.0980392) 0px 0px 50px inset, rgba(12, 0, 0, 0.298039) 3px 0px 5px -1px;
+	border-radius: 0px 3px 3px 0px;
+	margin-left: -8px;
+}
+
+.trelloScrum-labelCards-enabled .archive-items .list-card.trelloScrum-seperator a,
+.trelloScrum-labelCards-enabled .list .list-card.trelloScrum-seperator a {
+	color: white;
+	font-weight: bold;
+	text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.trelloScrum-labelCards-enabled .trelloScrum-seperator .trelloScrum-points,
+.trelloScrum-labelCards-enabled .trelloScrum-seperator .js-card-labels {
+    display: none;
+}
+
+.trelloScrum-labelCards-enabled .trelloScrum-seperator {
+    background-color: #CACACA;
+}
+
+.trelloScrum-labelCards-enabled .trelloScrum-seperator.trelloScrum-seperator-red {
+     background-color: #cb4d4d;
+}
+.trelloScrum-labelCards-enabled .trelloScrum-seperator.trelloScrum-seperator-orange {
+     background-color: #e09952;
+}
+.trelloScrum-labelCards-enabled .trelloScrum-seperator.trelloScrum-seperator-yellow {
+     background-color: #dbdb57;
+}
+.trelloScrum-labelCards-enabled .trelloScrum-seperator.trelloScrum-seperator-green {
+     background-color: #34b27d;
+}
+.trelloScrum-labelCards-enabled .trelloScrum-seperator.trelloScrum-seperator-purple {
+     background-color: #9933cc;
+}
+.trelloScrum-labelCards-enabled .trelloScrum-seperator.trelloScrum-seperator-blue {
+     background-color: #4d77cb;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="./bootstrap.min.css"/>
+    <style>
+        body {
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+        .container {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <fieldset>
+                <legend>Board settings</legend>
+                <label>Max. story points</label> <input type="number" value="4" class="input-mini" id="maxSize">
+                <label class="checkbox"><input type="checkbox" checked="checked" value="ghostcards" id="ghostCards"> Dim cards without storypoints</label>
+                <label class="checkbox"><input type="checkbox" checked="checked" value="ghostcards" id="labelCards"> Show labels with '***titles***' as marker cards</label>
+            </fieldset>
+        </form> 
+    </div>
+    <script type="text/javascript" src="popup.js"></script>
+</body>
+</html>
