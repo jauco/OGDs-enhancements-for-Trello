@@ -1,40 +1,17 @@
-Scrum for Trello
-===========
+An extension that counts points on trello cards.
 
-Scrum for Trello adds functionality to the awesome trello.com for use in Scrum projects.
+We use it at OGD to make trello work just a bit better as a Scrum board.
 
-Trello is the perfect online equivalent of the whiteboard with sticky notes aka the Scrum
-board. One element we use are the storypoints. TrelloScrum gives you the ability to
-make use of story points in Trello.
+ * shows points typed between parens. (e.g. "improve the world (2)")
+ * It dims cards that have no points assigned (So everyone's aware that those tasks aren't accounted for in the totals)
+ * You can use '?' to indicate that the count is not known yet
+ * If a list has a '?' card it's point total will end in '?' as well
+ * large numbers are presented in red
 
-Setup
------
+ * Presents card that have a title surrounded by three stars like: "***card title***" as "separator" cards. Use labels to color them.
+ * Shows the board description using a button that is more discoverable than the trello default
+ * Allows you to put (B) (I) (D) next to a list title (for indicating (B)acklog, (I)n work and (D)one. It shows lists that are backlog or done using a darker color
 
-Scrum for Trello is a Chrome extension and you can install it via the Chrome Webstore.
-
-Or, clone this repository and load the TrelloScrum folder as an unpacked extension.
-
-How does it work?
------------------
-In the card titles you can add the storypoints between parentheses. The assigned points
-will be picked up by TrelloScrum and displayed in the upper right corner of the card.
-
-For each list the total amount of story points will be calculated and shown in the title
-of the list.
-
-Every second the story points will be detected and calculated. So changing a number or moving
-a card will be reflected almost immediately.
-
-
-Credits
--------
-TrelloScrum was developed by [Marcel Duin](http://webglmarcel.q42.net/) and [Jasper Kaizer](https://twitter.com/jkaizer)
-during our pet projects time at [Q42](http://q42.com).
-
-Great improvements made by @nicpottier and @paullofte:
-
-* The point value is moved to be a badge on the card.
-* Added support for Zero Point Cards (0), Unknown Point Cards (?), Decimal Value Cards (.5)
-* In addition I added the functionality to have the list total reflect the current filtered set of cards.
-
-
+Note:
+ * Doesn't have the point picker in the trello card
+ * Started out as some adaptations of [Scrum for Trello](https://github.com/Q42/TrelloScrum) but is mostly different code now.
