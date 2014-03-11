@@ -274,13 +274,10 @@
     //  Show the edit information button more prominently
     //******************************************************************************************************************
     function makeDescButtonMoreVisible(descBtn) {
-        descBtn.className = "header-btn header-boards desc-btn js-open-desc";
-        descBtn.style.float = "right";
-        descBtn.childNodes[1].className = "header-btn-icon icon-lg icon-info light";
-        descBtn.appendChild ($("<span class='text'>Project info</span>")[0]);
+        descBtn.appendChild ($("<span class='board-header-btn-text'>Project info</span>")[0]);
     }
 
-    $(".desc-btn").map(function () {
+    $(".js-open-desc").map(function () {
         makeDescButtonMoreVisible(this);
     })
 
