@@ -175,14 +175,6 @@
      background-color: #4d77cb;
 }
 
-.list-card-details > .list-card-title > .card-short-id {
-	
-}
-  
-.trelloScrum-seperator > .list-card-details > .list-card-title > .card-short-id {
-	display: none;
-}
-
 .shownCardNumber {
 	display: inline-block;
     border: 1px solid #d9d9d9;
