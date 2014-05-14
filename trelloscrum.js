@@ -26,11 +26,11 @@
             document.body.classList.add("trelloScrum-labelCards-disabled");
             document.body.classList.remove("trelloScrum-labelCards-enabled");
         }
-		if(settings.showCardNumbers) {
-			showCardNumbers();
-		} else {
-			removeCardNumbers();
-		}
+        if(settings.showCardNumbers) {
+            showCardNumbers();
+        } else {
+            removeCardNumbers();
+        }
         if (!isNaN(settings.maxSize*1)) {
             MAX_SIZE = settings.maxSize*1;
             $(".trelloScrum-points").each(function() {
@@ -40,7 +40,7 @@
                     this.classList.remove("trelloScrum-big");
                 }
             });
-        }	
+        }
     }
 
     //******************************************************************************************************************
@@ -226,10 +226,10 @@
     //******************************************************************************************************************
     //  Track card titles and show their point total or change them into a seperator
     //******************************************************************************************************************
-	var findStorypoints = /\((\x3f|\d*\.?\d+)\)/;
-	
+    var findStorypoints = /\((\x3f|\d*\.?\d+)\)/;
+
     function isSeperator(title) {
-		return (title.substr(0,3) === "***" && title.substr(-3) === "***") || title.substr(0,2) === "# ";
+        return (title.substr(0,3) === "***" && title.substr(-3) === "***") || title.substr(0,2) === "# ";
     }
 
     function hasPoints(title) {
@@ -293,18 +293,18 @@
         }
     }));
 
-	//******************************************************************************************************************
+    //******************************************************************************************************************
     //  Display the ticket numbers if they are not seperator labels
     //******************************************************************************************************************
-	function showCardNumbers() {
-		$(".card-short-id").each(function(){
-			if(!(($(this).parent().html().indexOf("***")) > - 1)) {
-				$(this).removeClass("hide").addClass("shownCardNumber")
-			}
-		});		
-	}
-	
-	function removeCardNumbers() {
-		$(".card-short-id").removeClass("shownCardNumber").addClass("hide");
-	}
+    function showCardNumbers() {
+        $(".card-short-id").each(function(){
+            if(!(($(this).parent().html().indexOf("***")) > - 1)) {
+                $(this).removeClass("hide").addClass("shownCardNumber")
+            }
+        });
+    }
+
+    function removeCardNumbers() {
+        $(".card-short-id").removeClass("shownCardNumber").addClass("hide");
+    }
 }());
