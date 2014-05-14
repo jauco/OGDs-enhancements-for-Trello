@@ -297,7 +297,6 @@
     //  Display the ticket numbers if they are not seperator labels
     //******************************************************************************************************************
 	function showCardNumbers() {
-		//var card = $(".card-short-id");
 		$(".card-short-id").each(function(){
 			if(!(($(this).parent().html().indexOf("***")) > - 1)) {
 				$(this).removeClass("hide").addClass("shownCardNumber")
