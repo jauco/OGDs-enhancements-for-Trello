@@ -175,8 +175,11 @@
      background-color: #4d77cb;
 }
 
-.shownCardNumber {
-	display: inline-block;
+body.trelloScrum-showCardNumbers .trelloScrum-seperator .card-short-id {
+    display: none;
+}
+body.trelloScrum-showCardNumbers span.card-short-id {
+    display: inline-block;
     border: 1px solid #d9d9d9;
     border-bottom-color: #d3d3d3;
     border-radius: 2px;

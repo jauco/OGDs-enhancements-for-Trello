@@ -297,14 +297,10 @@
     //  Display the ticket numbers if they are not seperator labels
     //******************************************************************************************************************
     function showCardNumbers() {
-        $(".card-short-id").each(function(){
-            if(!(($(this).parent().html().indexOf("***")) > - 1)) {
-                $(this).removeClass("hide").addClass("shownCardNumber")
-            }
-        });
+        $("body").addClass("trelloScrum-showCardNumbers")
     }
 
     function removeCardNumbers() {
-        $(".card-short-id").removeClass("shownCardNumber").addClass("hide");
+        $("body").removeClass("trelloScrum-showCardNumbers")
     }
 }());
