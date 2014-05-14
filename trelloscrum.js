@@ -2,7 +2,6 @@
     "use strict";
     var mutationListeners = [];
     var MAX_SIZE = 4;
-	var cardNumbersShown; 
 
     chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
         if (message.type === "settings") {
@@ -28,7 +27,6 @@
             document.body.classList.remove("trelloScrum-labelCards-enabled");
         }
 		if(settings.showCardNumbers) {
-			cardNumbersShown = true;
 			showCardNumbers();
 		} else {
 			removeCardNumbers();
@@ -42,8 +40,7 @@
                     this.classList.remove("trelloScrum-big");
                 }
             });
-        }
-		
+        }	
     }
 
     //******************************************************************************************************************
@@ -232,11 +229,7 @@
 	var findStorypoints = /\((\x3f|\d*\.?\d+)\)/;
 	
     function isSeperator(title) {
-		if(cardNumbersShown) {
-			return title.indexOf("***") > -1;
-		} else {
-			return (title.substr(0,3) === "***" && title.substr(-3) === "***") || title.substr(0,2) === "# ";
-		}
+		return (title.substr(0,3) === "***" && title.substr(-3) === "***") || title.substr(0,2) === "# ";
     }
 
     function hasPoints(title) {
@@ -299,9 +292,17 @@
             newData[0].added.map(makeDescButtonMoreVisible);
         }
     }));
-	
-	function showCardNumbers() {	
-		$(".card-short-id").addClass("shownCardNumber").removeClass("hide");	
+
+	//******************************************************************************************************************
+    //  Display the ticket numbers if they are not seperator labels
+    //******************************************************************************************************************
+	function showCardNumbers() {
+		//var card = $(".card-short-id");
+		$(".card-short-id").each(function(){
+			if(!(($(this).parent().html().indexOf("***")) > - 1)) {
+				$(this).removeClass("hide").addClass("shownCardNumber")
+			}
+		});		
 	}
 	
 	function removeCardNumbers() {
