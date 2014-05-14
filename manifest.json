@@ -1,6 +1,6 @@
 {
     "name": "OGD's enhancements for Trello",
-    "version": "6",
+    "version": "7",
     "description": "",
     "content_scripts": [
         {
