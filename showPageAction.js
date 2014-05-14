@@ -1,7 +1,8 @@
 var DEFAULT_SETTINGS = {
     maxSize: 4,
     ghostCards: true,
-    labelCards: true
+    labelCards: true,
+	showCardNumbers: true
 }
 
 var settings = DEFAULT_SETTINGS;

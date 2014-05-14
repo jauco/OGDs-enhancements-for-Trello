@@ -2,6 +2,7 @@
     "use strict";
     var mutationListeners = [];
     var MAX_SIZE = 4;
+	var cardNumbersShown; 
 
     chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
         if (message.type === "settings") {
@@ -26,6 +27,12 @@
             document.body.classList.add("trelloScrum-labelCards-disabled");
             document.body.classList.remove("trelloScrum-labelCards-enabled");
         }
+		if(settings.showCardNumbers) {
+			cardNumbersShown = true;
+			showCardNumbers();
+		} else {
+			removeCardNumbers();
+		}
         if (!isNaN(settings.maxSize*1)) {
             MAX_SIZE = settings.maxSize*1;
             $(".trelloScrum-points").each(function() {
@@ -36,6 +43,7 @@
                 }
             });
         }
+		
     }
 
     //******************************************************************************************************************
@@ -221,10 +229,14 @@
     //******************************************************************************************************************
     //  Track card titles and show their point total or change them into a seperator
     //******************************************************************************************************************
-    var findStorypoints = /\((\x3f|\d*\.?\d+)\)/;
-
+	var findStorypoints = /\((\x3f|\d*\.?\d+)\)/;
+	
     function isSeperator(title) {
-        return (title.substr(0,3) === "***" && title.substr(-3) === "***") || title.substr(0,2) === "# ";
+		if(cardNumbersShown) {
+			return title.indexOf("***") > -1;
+		} else {
+			return (title.substr(0,3) === "***" && title.substr(-3) === "***") || title.substr(0,2) === "# ";
+		}
     }
 
     function hasPoints(title) {
@@ -287,4 +299,12 @@
             newData[0].added.map(makeDescButtonMoreVisible);
         }
     }));
+	
+	function showCardNumbers() {	
+		$(".card-short-id").addClass("shownCardNumber").removeClass("hide");	
+	}
+	
+	function removeCardNumbers() {
+		$(".card-short-id").removeClass("shownCardNumber").addClass("hide");
+	}
 }());

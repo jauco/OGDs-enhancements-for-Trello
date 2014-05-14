@@ -153,7 +153,7 @@
 }
 
 .trelloScrum-labelCards-enabled .trelloScrum-seperator {
-    background-color: #CACACA;
+    background-color: green;
 }
 
 .trelloScrum-labelCards-enabled .trelloScrum-seperator.trelloScrum-seperator-red {
@@ -173,4 +173,29 @@
 }
 .trelloScrum-labelCards-enabled .trelloScrum-seperator.trelloScrum-seperator-blue {
      background-color: #4d77cb;
+}
+
+.list-card-details > .list-card-title > .card-short-id {
+	
+}
+  
+.trelloScrum-seperator > .list-card-details > .list-card-title > .card-short-id {
+	display: none;
+}
+
+.shownCardNumber {
+	display: inline-block;
+    border: 1px solid #d9d9d9;
+    border-bottom-color: #d3d3d3;
+    border-radius: 2px;
+    color: #737373;
+    cursor: default;
+    float: left;
+    font-size: 11px;
+    line-height: 16px;
+    height: 16px;
+    margin-right: 4px;
+    padding: 0 4px;
+    position: relative;
+    text-decoration: none;
 }
