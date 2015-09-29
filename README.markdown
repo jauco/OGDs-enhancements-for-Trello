@@ -1,4 +1,10 @@
+# OGD's enhancements for Trello
+
 An extension that counts points on trello cards.
+
+[OGD's enhancements for Trello - Chrome Web Store](https://chrome.google.com/webstore/detail/ogds-enhancements-for-tre/ionfplcjpbmgjipcpppgakhkbldeopmd)
+
+![screenshot](images/screenshot.png)
 
 We use it at OGD to make trello work just a bit better as a Scrum board.
 
