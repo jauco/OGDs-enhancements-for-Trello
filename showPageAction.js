@@ -44,10 +44,10 @@ function getBoardId(url) {
     var location = getTrelloLocation(url);
     try {
         if (location === "board") {
-            return url.match(/trello.com\/b\/[^\/]+\/([0-9a-f]+)/)[1];
+            return url.match(/trello\.com\/b\/(\w+)/)[1];
         }
         else {
-            return url.match(/trello.com\/c\/[^\/]+\/([0-9a-f]+)/)[1];
+            return url.match(/trello\.com\/c\/(\w+)/)[1];
         }
     } catch (e) {
         throw new Error("can't get board id from '" + url + "'");
