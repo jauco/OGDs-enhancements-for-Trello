@@ -1,6 +1,6 @@
 var DEFAULT_SETTINGS = {
     maxSize: 4,
-    ghostCards: true,
+    ghostCards: false,
     labelCards: true,
     showCardNumbers: false
 }
